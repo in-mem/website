@@ -1,0 +1,57 @@
+// 
+// 
+// user-variables.scss
+//
+// Place your own variable overrides here, these will override any Bootstrap and theme variables.
+
+
+// Color Scheme
+// Change the hex values below to alter the main color scheme.
+
+$primary:       #0088cc;
+$primary-2:     #006598;
+$primary-3:     #003e5c;
+
+$proto-purple-2:     #382a5d;
+$proto-purple-3:     #32234f;
+
+.bg-proto-purple-2 {
+    background-color: $proto-purple-2;
+}
+
+.bg-proto-purple-3 {
+    background-color: $proto-purple-3;
+}
+
+// Do not change or remove the $theme-color-scheme or $theme-colors maps below
+
+$theme-color-scheme: (
+    "primary":    $primary,
+    "primary-2":  $primary-2,
+    "primary-3":  $primary-3
+);
+
+$theme-colors: (
+    "primary":    $primary,
+    "primary-2":  $primary-2,
+    "primary-3":  $primary-3
+);
+
+.video_contain {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+video {
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    min-height: 50%;
+    min-width: 50%;
+}

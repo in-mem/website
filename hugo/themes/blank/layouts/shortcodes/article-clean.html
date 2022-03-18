@@ -1,0 +1,25 @@
+<ul>
+
+    {{ range .Site.AllPages }}
+    {{ if eq .Layout "article" }}
+    <li>
+        <div class="row">
+            <div class="col-lg-7">
+                <a href="{{.Permalink}}" class="d-flex align-items-center ">
+                    {{.Title}}
+                </a>
+            </div>
+
+            <div class="col-lg-5 ">
+                <a href="{{.Params.authorsite}}" class="d-flex align-items-center">
+                    
+                    <div>{{.Params.author}}</div>
+                </a>
+            </div>
+
+        </div>
+    </li>
+    {{ end }}
+    {{ end }}
+
+</ul>

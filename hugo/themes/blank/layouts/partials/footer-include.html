@@ -1,0 +1,401 @@
+<!-- Required vendor scripts (Do not remove) -->
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/popper.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+
+<!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+{{ $js := resources.Get "js/tabs.js" }}
+<script type="text/javascript" src="{{ $js.Permalink }}"></script>
+
+<script type="text/javascript" src="/assets/js/prism.js"></script>
+
+<!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+<script type="text/javascript" src="/assets/js/aos.js"></script>
+<!-- Clipboard (copies content from browser into OS clipboard) -->
+<script type="text/javascript" src="/assets/js/clipboard.min.js"></script>
+<!-- Fancybox (handles image and video lightbox and galleries) -->
+<script type="text/javascript" src="/assets/js/jquery.fancybox.min.js"></script>
+<!-- Flatpickr (calendar/date/time picker UI) -->
+<script type="text/javascript" src="/assets/js/flatpickr.min.js"></script>
+<!-- Flickity (handles touch enabled carousels and sliders) -->
+<script type="text/javascript" src="/assets/js/flickity.pkgd.min.js"></script>
+<!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+<script type="text/javascript" src="/assets/js/ion.rangeSlider.min.js"></script>
+<!-- Isotope (masonry layouts and filtering) -->
+<script type="text/javascript" src="/assets/js/isotope.pkgd.min.js"></script>
+<!-- jarallax (parallax effect and video backgrounds) -->
+<script type="text/javascript" src="/assets/js/jarallax.min.js"></script>
+<script type="text/javascript" src="/assets/js/jarallax-video.min.js"></script>
+<script
+  type="text/javascript"
+  src="/assets/js/jarallax-element.min.js"
+></script>
+<!-- jQuery Countdown (displays countdown text to a specified date) -->
+<script src="https://unpkg.com/mermaid@<8.14.0/dist/mermaid.min.js"></script>
+<script type="text/javascript">
+  const lineColor = "#00ff00";
+  const actorColor = "#007cb4";
+  const textColor = "#ffffff";
+  const fontFamily = "'trebuchet ms', verdana, arial !important";
+  const backgroundColor = "#323f49";
+  const blueColor = "#007cb4";
+  const greenColor = "#00CC66";
+  const yellowColor = "#FFBF34";
+  const redColor = "#C34423";
+  const grayColor = "#727f99";
+  const lightBlueColor = "#00ADF8";
+  const lineWidth = "4px";
+  const strokeWidth = "3px";
+  const strokeColor = backgroundColor;
+  const commentColor = "#FFF2CC";
+  const commentBorderColor = "#D6B656";
+  var css = `
+
+  $prefix .comment .label-container{
+    fill: ${commentColor};
+    stroke: ${commentBorderColor};
+    stroke-width: ${lineWidth};
+  }
+
+  $prefix .comment .label{
+    color: #404040;
+    font-family: ${fontFamily};
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  $prefix .message .label-container{
+    fill: #ffffff;
+    stroke: #e0e0e0;
+    stroke-width: ${lineWidth};
+  }
+
+  $prefix .message .label{
+    color: #404040;
+  }
+
+  $prefix .gray .label-container{
+    fill: ${grayColor};
+    stroke: ${strokeColor};
+    stroke-width: ${strokeWidth};
+  }
+
+  $prefix .red .label-container{
+    fill: ${redColor};
+    stroke: ${strokeColor};
+    stroke-width: ${strokeWidth};
+  }
+
+  $prefix .selected .label-container{
+    stroke: #ffffff !important;
+    stroke-width:4px !important;
+  }
+
+  $prefix .yellow .label-container{
+    fill: ${yellowColor};
+    stroke: ${strokeColor};
+    stroke-width: ${strokeWidth};
+  }
+
+  $prefix .green .label-container{
+    fill: ${greenColor};
+    stroke: ${strokeColor};
+    stroke-width: ${strokeWidth};
+  }
+
+  $prefix .blue .label-container{
+    fill: ${blueColor};
+    stroke: ${strokeColor};
+    stroke-width: ${strokeWidth};
+  }
+
+  $prefix .light-blue .label-container {
+    fill: ${lightBlueColor};
+    stroke: ${strokeColor};
+    stroke-width: ${strokeWidth};
+  }
+
+  $prefix .edgePath marker {
+    stroke: ${lineColor};
+    fill:${lineColor};
+  }
+
+  $prefix .label-container {
+    stroke: none;
+    fill: ${actorColor};
+  }
+
+  $prefix [id^="flowchart-empty"] {
+    display: none;
+  }
+
+  $prefix [class*='LS-empty']  {
+    display:none;
+  }
+
+  $prefix [class*='LE-empty']  {
+    display:none;
+  }
+
+  $prefix [class*='LS-free']  {
+    display:none;
+  }
+
+  $prefix [class*='LE-free']  {
+    display:none;
+  }
+
+  $prefix .cluster rect {
+    fill: #00b3f6;
+    stroke: none;
+  }
+
+  $prefix .cluster span {
+    color: ${textColor};
+  }
+
+  $prefix .label {
+    color: ${textColor};
+    font-family: ${fontFamily};
+    font-weight: bold;
+    font-size: small;
+  }
+
+  $prefix .edgePath .path {
+    stroke-width: ${lineWidth};
+    stroke: ${lineColor};
+  }
+
+  $prefix .actor {
+    stroke: none;
+    fill: ${actorColor}};
+  }
+
+
+  $prefix text.actor {
+    fill: ${textColor};
+    stroke: none;
+    font-family: ${fontFamily};
+    font-weight: bold;
+  }
+
+  $prefix text.actor > tspan {
+    fill: ${textColor};
+  }
+
+  g .marker {
+    stroke-width: ${lineWidth} !important;
+    stroke: ${lineColor} !important;
+    fill: ${lineColor} !important;
+  }
+  .root .nodes .node circle,
+  .root .nodes .node rect {
+    stroke: none ;
+    fill: ${blueColor} ;   
+  }
+
+  g .red {
+    fill: ${redColor};
+    stroke: ${backgroundColor};
+    stroke-width: ${lineWidth};
+  }
+
+  g .yellow {
+    fill: ${yellowColor};
+    stroke: ${backgroundColor};
+    stroke-width: ${lineWidth};
+  }
+
+  g .green {
+    fill: ${greenColor};
+    stroke: ${backgroundColor};
+    stroke-width: ${lineWidth};
+  }
+
+  g .blue {
+    fill: ${blueColor};
+    stroke: ${backgroundColor};
+    stroke-width: ${lineWidth};
+  }
+
+  g .light-blue  {
+    fill: ${lightBlueColor};
+    stroke: ${backgroundColor};
+    stroke-width: ${lineWidth};
+  }
+
+  .root .nodes .node .nodeLabel {
+    color: ${textColor} !important;
+  }
+
+  .root .flowchart-link {
+    stroke-width: ${lineWidth} !important;
+    stroke: ${lineColor} !important;
+  }
+
+  $prefix line {
+    stroke-width: 2px !important;
+    stroke: #a0a0a0 !important;
+  }
+
+  $prefix [id^="arrowhead"] path {
+    fill:  ${lineColor} !important;    
+  }
+
+  $prefix .arrowheadPath {
+    fill: ${lineColor};
+    stroke: none;
+  }
+
+    $prefix .messageText {
+    fill: ${textColor};
+    stroke: none;
+  }
+
+   .actor-line {
+    stroke: grey !important;
+  }
+
+   #arrowhead path {
+    stroke: ${lineColor} !important;
+    fill: ${lineColor} !important;
+  }
+
+   .messageLine0 {
+    stroke-dasharray: "2 2" !important;
+    marker-end: "url(#arrowhead)" !important;
+    stroke-width: ${lineWidth} !important;
+    stroke: ${lineColor} !important;
+  }
+
+   .messageLine1 {
+    stroke-width: 1.5 !important;
+    stroke-dasharray: "2 2" !important;
+    stroke:${lineColor} !important;
+  }
+
+  $prefix .note {
+    fill: #ffbb00;
+    stroke: none;
+  }
+
+  $prefix .note  > tspan {
+    fill: #373635;
+  }
+
+  $prefix .messageText {
+    fill: black;
+    stroke: none;
+    font-family: ${fontFamily}
+    font-size: 14px;
+  }
+
+  $prefix .labelBox {
+    stroke: none;
+    fill: ${lineColor};
+  }
+
+  $prefix .labelText {
+    fill: black;
+    stroke: none;
+    font-family: ${fontFamily}
+  }
+
+  $prefix .loopText > tspan {
+    fill: ${textColor};
+    stroke: none;
+    font-family: ${fontFamily}
+  }
+
+  $prefix text.actor>tspan {
+    fill: ${textColor} !important;
+    font-weight: bolder !important;
+  }
+
+  .loopText>tspan {
+    fill: ${textColor} !important;
+    stroke: none !important;
+  }
+   .messageText {
+    fill: ${textColor} !important;    
+    stroke: none !important;
+  }
+
+  $prefix line.loopLine {
+    stroke-width: 2px !important;
+    stroke: #a0a0a0 !important;
+  }
+
+  .activation0 {
+    fill: #ffc107 !important;
+    stroke: #000 !important;
+  }
+
+  `;
+
+  css = css.replaceAll("$prefix", "g ");
+
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "default",
+    flowchart: {
+      curve: "basis",
+    },
+    securityLevel: "loose",
+    themeCSS: css,
+    fontFamily: fontFamily,
+  });
+</script>
+<script
+  type="text/javascript"
+  src="/assets/js/jquery.countdown.min.js"
+></script>
+<!-- jQuery smartWizard facilitates steppable wizard content -->
+<script
+  type="text/javascript"
+  src="/assets/js/jquery.smartWizard.min.js"
+></script>
+<!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+<script type="text/javascript" src="/assets/js/plyr.polyfilled.min.js"></script>
+
+<!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+<script type="text/javascript" src="/assets/js/scrollMonitor.js"></script>
+<!-- Smooth scroll (animation to links in-page)-->
+<script
+  type="text/javascript"
+  src="/assets/js/smooth-scroll.polyfills.min.js"
+></script>
+<!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+<script
+  type="text/javascript"
+  src="/assets/js/svg-injector.umd.production.js"
+></script>
+<!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+<script type="text/javascript" src="/assets/js/twitterFetcher_min.js"></script>
+<!-- Typed text (animated typing effect)-->
+<script type="text/javascript" src="/assets/js/typed.min.js"></script>
+<!-- Required theme scripts (Do not remove) -->
+<script type="text/javascript" src="/assets/js/theme.js"></script>
+<!-- Removes page load animation when window is finished loading -->
+<script type="text/javascript">
+  window.addEventListener("load", function () {
+    document.querySelector("body").classList.add("loaded");
+  });
+</script>
+
+<!-- at the end of the BODY -->
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"
+></script>
+<script type="text/javascript">
+  docsearch({
+    apiKey: "e7ef9006dc1d0b2ecdd86e9b3e1ae568",
+    indexName: "asynkronit_protoactor",
+    inputSelector: "#AlgoliaSearch",
+    debug: false, // Set debug to true if you want to inspect the dropdown
+  });
+</script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
