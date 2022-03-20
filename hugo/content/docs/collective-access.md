@@ -1,5 +1,0 @@
----
-title: Collective Access
----
-
-WIP
