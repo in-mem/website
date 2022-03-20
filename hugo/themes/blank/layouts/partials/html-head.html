@@ -1,13 +1,11 @@
 <head>
-  {{ $sass := resources.Get "scss/theme.scss" }} {{ $style := $sass |
-  resources.ToCSS }}
+  {{ $sass := resources.Get "scss/theme.scss" }} {{ $style := $sass | resources.ToCSS }}
   <meta charset="utf-8" />
   <title>
-    {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end
-    }}{{ .Site.Title }}{{ end }}
+    {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Proto.Actor Website" />
+  <meta name="description" content="InMem Website" />
   <!-- Begin loading animation -->
   <link
     href="/assets/css/loaders/loader-pulse.css"
