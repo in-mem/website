@@ -1,4 +1,4 @@
-# protoactor-website
+# inmem website
 
 Current documentation web-site build with [Hugo](https://gohugo.io/getting-started/quick-start/) framework.
 
