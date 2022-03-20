@@ -1,72 +1,21 @@
 ---
-title: "Proto.Actor"
+title: "inmem solutions"
 date: 2020-07-28T16:34:24+02:00
 draft: false
 tags: []
 layout: empty
 ---
 
-<section class="mt-0 p-0 "
-  style="height:50vh;min-height:380px;overflow: hidden;border-top:8px solid #22252b;border-bottom:8px solid #22252b;">
-  <video autoplay muted loop class="video" style="width: 100%;object-fit: fill;">
-    <source src="/assets/img/asynkron/retro.mp4" type="video/mp4">
-  </video>
-</section>
-
-<section class="mt-0 p-0 bg-white">
-  <div class="row p-0 m-0  ">
-    <div class="col bg-proto-purple-2">
-      <div class="content p-4 text-center text-white">
-        <img class="icon icon-lg bg-white" src="/assets/img/icons/theme/general/half-heart.svg" alt="Icon"
-          data-inject-svg />
-        <h4>Cloud Native</h4>
-        <p>
-          Built on cloud native technologies.
-          Taking advantage of proven stability and performance.
-        </p>
-      </div>
-    </div>
-    <div class="col bg-proto-purple-2">
-      <div class="content p-4 text-center text-white">
-        <img class="icon icon-lg bg-white" src="/assets/img/icons/theme/files/share.svg" alt="Icon" data-inject-svg />
-        <h4>Simple Concurrency & Distribution</h4>
-        <p>
-          Asynchronous and Distributed by design. High-level abstractions like Actors and Virtual Grains.
-        </p>
-      </div>
-    </div>
-
-    <div class="col bg-proto-purple-2">
-      <div class="content p-4 text-center text-white">
-        <img class="icon icon-lg bg-white" src="/assets/img/icons/theme/communication/sending.svg" alt="Icon"
-          data-inject-svg />
-        <h4>Extreme Performance</h4>
-        <p>
-          Capable of millions of messages per second cross-process communication
-        </p>
-      </div>
-    </div>
-    <div class="col bg-proto-purple-2">
-      <div class="content p-4 text-center text-white">
-        <img class="icon icon-lg bg-white" src="/assets/img/icons/theme/general/shield-check.svg" alt="Icon"
-          data-inject-svg />
-        <h4>Resilient by Design</h4>
-        <p>
-          Write systems that self-heal using supervisor hierarchies.
-        </p>
-      </div>
-    </div>
-  </div>
-
-</section>
-
 <section class="bg-light o-hidden pt-5 pb-5">
   <div class="container">
     <div class="row section-title justify-content-center mb-4">
       <div class="col-md-10 col-lg-9 col-xl-8">
         <h3 class="display-4">Get in touch</h3>
-        <div class="lead">Get in touch with our Customer Service.<br>
-          Simply complete the following form, and click the Submit button. We look forward to assisting you.</div>
+        <div class="lead">
+          Get in touch with our Customer Service.<br />
+          Simply complete the following form, and click the Submit button. We
+          look forward to assisting you.
+        </div>
       </div>
     </div>
   </div>
@@ -78,17 +27,27 @@ layout: empty
             <div class="col-sm">
               <div class="form-group">
                 <label for="contact-name">Your Name</label>
-                <input type="text" name="contact-name" class="form-control" id="contact-name" required="">
-                <div class="invalid-feedback">
-                  Please type your name.
-                </div>
+                <input
+                  type="text"
+                  name="contact-name"
+                  class="form-control"
+                  id="contact-name"
+                  required=""
+                />
+                <div class="invalid-feedback">Please type your name.</div>
               </div>
             </div>
             <div class="col-sm">
               <div class="form-group">
                 <label for="contact-email">Email Address</label>
-                <input type="email" name="contact-email" class="form-control" id="contact-email"
-                  placeholder="you@website.com" required="">
+                <input
+                  type="email"
+                  name="contact-email"
+                  class="form-control"
+                  id="contact-email"
+                  placeholder="you@website.com"
+                  required=""
+                />
                 <div class="invalid-feedback">
                   Please provide your email address.
                 </div>
@@ -99,38 +58,66 @@ layout: empty
             <div class="col-sm">
               <div class="form-group">
                 <label for="contact-company">Company (optional)</label>
-                <input type="text" name="contact-company" class="form-control" id="contact-company">
+                <input
+                  type="text"
+                  name="contact-company"
+                  class="form-control"
+                  id="contact-company"
+                />
               </div>
             </div>
             <div class="col-sm">
               <div class="form-group">
                 <label for="contact-phone">Phone (optional)</label>
-                <input type="tel" name="contact-phone" class="form-control" id="contact-phone">
+                <input
+                  type="tel"
+                  name="contact-phone"
+                  class="form-control"
+                  id="contact-phone"
+                />
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="contact-message" rows="5" class="form-control" required=""></textarea>
-            <div class="invalid-feedback">
-              Please tell us a little more.
-            </div>
+            <textarea
+              id="contact-message"
+              name="contact-message"
+              rows="5"
+              class="form-control"
+              required=""
+            ></textarea>
+            <div class="invalid-feedback">Please tell us a little more.</div>
           </div>
-          <div class="form-row">
-
-          </div>
+          <div class="form-row"></div>
           <div class="form-row">
             <div class="col">
-              <div class="d-none alert alert-success" role="alert" data-success-message="">
+              <div
+                class="d-none alert alert-success"
+                role="alert"
+                data-success-message=""
+              >
                 Thanks, a member of our team will be in touch shortly.
               </div>
-              <div class="d-none alert alert-danger" role="alert" data-error-message="">
+              <div
+                class="d-none alert alert-danger"
+                role="alert"
+                data-error-message=""
+              >
                 Please fill all fields correctly.
               </div>
               <div class="d-flex justify-content-end">
-                <button class="btn btn-primary" type="submit" data-loading-text="Sending">
-                  <img class="icon icon-sm bg-white" src="/assets/img/icons/theme/communication/urgent-mail.svg"
-                    alt="Icon" data-inject-svg />
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  data-loading-text="Sending"
+                >
+                  <img
+                    class="icon icon-sm bg-white"
+                    src="/assets/img/icons/theme/communication/urgent-mail.svg"
+                    alt="Icon"
+                    data-inject-svg
+                  />
                   <span>Send Message</span>
                 </button>
               </div>
