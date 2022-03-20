@@ -1,6 +1,6 @@
-baseURL = "https://proto.actor/"
+baseURL = "https://inmem.com/"
 languageCode = "en-us"
-title = "Proto.Actor"
+title = "inmem solutions"
 theme = "blank"
 # relativeURLs = "true"
 # uglyURLs = "true"
